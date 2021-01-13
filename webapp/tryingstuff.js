@@ -1,4 +1,3 @@
-var z = 100;
 var s = 1
 var i = 0.03
 var r = 0

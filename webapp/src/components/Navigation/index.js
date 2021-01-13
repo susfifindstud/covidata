@@ -1,4 +1,5 @@
-const NavBar = () => (
+import { Link } from 'react-router-dom';
+const Navigation = () => (
 <div>
     <nav class="navbar navbar-expand-lg navbar-dark">
             
@@ -11,6 +12,16 @@ const NavBar = () => (
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Browse
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <Link to="/browse1" activeStyle={{color: 'white'}}><a class="dropdown-item" href="/books">Books</a></Link>
+                        <Link to="/browse2" activeStyle={{color: 'white'}}><a class="dropdown-item" href="/book-details">Book Details</a></Link>
+                        <a class="dropdown-item" href="/">Merch</a>
+                    </div>
+                </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="./PredictionModels.js" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     prediction models
@@ -63,5 +74,5 @@ const NavBar = () => (
 </div>
 )
 
-export default NavBar;
+export default Navigation;
 

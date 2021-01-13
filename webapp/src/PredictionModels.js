@@ -1,6 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
-import NavBar from './NavBar.js';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+//import './App.css';
 
 const d3 = require("d3");
 var lineData = [
