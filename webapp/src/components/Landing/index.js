@@ -13,20 +13,60 @@ import PieSVG from "../../Piechart stuff/PieSVG";
 
 import BarChart from '../../BarChart';
 
+
+
+var s = 1
+var i = 0.03
+var r = 0
+var t = 0
+
+function sayHello(){
+  console.log('hello');
+}
+
+function increment(){
+  s = s - 0.5 * s * i
+  r = r + 0.1 * i
+  i =  i + 0.5 * s * i - 0.1 * i
+}
+
+function values(time){
+  s = 1
+  i = 0.03
+  r = 0
+  for (t = 0; t < time; t++){
+    increment()
+  }
+}
+
+
+function infected(time){
+  s = 1
+  i = 0.03
+  r = 0
+  for (t = 0; t < time; t++){
+    increment()
+  }
+  return i
+}
+
+alert('hello world');
+
+
 function Landing() {
   const data2 = [
-    {year: 1980, efficiency: 24.3, sales: 8949000},
-    {year: 1985, efficiency: 27.6, sales: 10979000},
-    {year: 1990, efficiency: 28, sales: 9303000},
-    {year: 1991, efficiency: 28.4, sales: 8185000},
-    {year: 1992, efficiency: 27.9, sales: 8213000},
-    {year: 1993, efficiency: 28.4, sales: 8518000},
-    {year: 1994, efficiency: 28.3, sales: 8991000},
-    {year: 1995, efficiency: 28.6, sales: 8620000},
-    {year: 1996, efficiency: 28.5, sales: 8479000},
-    {year: 1997, efficiency: 28.7, sales: 8217000},
-    {year: 1998, efficiency: 28.8, sales: 8085000},
-    {year: 1999, efficiency: 28.3, sales: 8638000},
+    {year: 0, efficiency: 24.3, sales: 0.03},
+    {year: 1, efficiency: 27.6, sales: infected(1)},
+    {year: 2, efficiency: 28, sales: infected(2)},
+    {year: 3, efficiency: 28.4, sales: infected(3)},
+    {year: 4, efficiency: 27.9, sales: infected(4)},
+    {year: 5, efficiency: 28.4, sales: infected(5)},
+    {year: 6, efficiency: 28.3, sales: infected(6)},
+    {year: 7, efficiency: 28.6, sales: infected(7)},
+    {year: 8, efficiency: 28.5, sales: infected(8)},
+    {year: 9, efficiency: 28.7, sales: infected(9)},
+    {year: 10, efficiency: 28.8, sales: infected(10)},
+    /*{year: 1999, efficiency: 28.3, sales: 8638000},
     {year: 2000, efficiency: 28.5, sales: 8778000},
     {year: 2001, efficiency: 28.8, sales: 8352000},
     {year: 2002, efficiency: 29, sales: 8042000},
@@ -44,7 +84,7 @@ function Landing() {
     {year: 2014, efficiency: 36.5, sales: 7708000},
     {year: 2015, efficiency: 37.2, sales: 7517000},
     {year: 2016, efficiency: 37.7, sales: 6873000},
-    {year: 2017, efficiency: 39.4, sales: 6081000},
+    {year: 2017, efficiency: 39.4, sales: 6081000},*/
   ]
 
   const generateData = (value, length = 5) =>

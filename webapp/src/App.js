@@ -8,7 +8,6 @@ import Footer from './components/Footer';
 import * as ROUTES from './constants/routes';
 //import "./css/styles.css";
 
-const browserHistory = createBrowserHistory();
 
 const App = () => (
       <Router>
